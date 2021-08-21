@@ -3,5 +3,5 @@
 Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
-  resources :search, only: :index
+  resources :car, only: :index
 end

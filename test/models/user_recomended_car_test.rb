@@ -1,6 +1,6 @@
 require "test_helper"
 
-class SearchControllerTest < ActionDispatch::IntegrationTest
+class UserRecomendedCarTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

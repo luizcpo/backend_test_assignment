@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_17_121316) do
+ActiveRecord::Schema.define(version: 2021_08_18_165754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,17 @@ ActiveRecord::Schema.define(version: 2021_06_17_121316) do
     t.index ["user_id"], name: "index_user_preferred_brands_on_user_id"
   end
 
+  create_table "user_recomended_cars", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "car_id", null: false
+    t.float "rank_score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["car_id"], name: "index_user_recomended_cars_on_car_id"
+    t.index ["user_id", "car_id"], name: "index_user_recomended_cars_on_user_id_and_car_id", unique: true
+    t.index ["user_id"], name: "index_user_recomended_cars_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.int8range "preferred_price_range"
@@ -49,4 +60,6 @@ ActiveRecord::Schema.define(version: 2021_06_17_121316) do
   add_foreign_key "cars", "brands"
   add_foreign_key "user_preferred_brands", "brands"
   add_foreign_key "user_preferred_brands", "users"
+  add_foreign_key "user_recomended_cars", "cars"
+  add_foreign_key "user_recomended_cars", "users"
 end

@@ -27,5 +27,9 @@ module CarMarket
     config.load_defaults 6.1
 
     config.api_only = true
+
+    config.after_initialize do
+      RecomendedCarCrawlerWorker.perform_async
+    end
   end
 end

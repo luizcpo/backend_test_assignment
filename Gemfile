@@ -11,6 +11,8 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 # Simple, efficient background processing for Ruby
 gem 'sidekiq', '~> 4.1', '>= 4.1.2'
+# Enables to set jobs to be run in specified time (using CRON notation)
+gem 'sidekiq-cron', '~> 1.2'
 # Makes http fun! Also, makes consuming restful web services dead easy.
 gem 'httparty', '~> 0.18.1'
 # Reduces boot times through caching; required in config/boot.rb

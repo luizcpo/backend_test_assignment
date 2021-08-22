@@ -7,6 +7,11 @@ ruby '2.7.2'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
+# ActiveModel::Serializers allows you to generate your JSON in an object-oriented and convention-driven manner.
+gem 'active_model_serializers', '~> 0.10.2'
+# Agnostic pagination in plain ruby: it works with any framework, ORM and DB type, 
+# with all kinds of collections, even pre-paginated, scopes, Arrays, JSON data... Easy, powerful, fast and light.
+gem 'pagy', '~> 4.11'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Simple, efficient background processing for Ruby

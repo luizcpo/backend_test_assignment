@@ -15,10 +15,10 @@ class RecomendationSerializer < ActiveModel::Serializer
   end
 
   def label
-    priceRange = @instance_options.dig(:serializer_options, :priceRange)
+    price_range = @instance_options.dig(:serializer_options, :price_range)
     brands = @instance_options.dig(:serializer_options, :brands)
     
-    return 'perfect_match' if priceRange.include?(object.price) && brands.include?(object.brand_id)
+    return 'perfect_match' if price_range.include?(object.price) && brands.include?(object.brand_id)
     return 'good_match' if brands.include? object.brand_id
     return nil
   end

@@ -1,17 +1,17 @@
-class CarController < ApplicationController
+class CarsController < ApplicationController
     def index
       config_params
       fetch_info
 
       search_service = CarSearchService.new(params, 
                                             @brands, 
-                                            @priceRange)
+                                            @price_range)
 
       pagy,result = pagy_array(search_service.recomendations, page: params[:page])
             
       render json: result, 
              each_serializer: RecomendationSerializer,
-             serializer_options: { brands: @brands, priceRange: @priceRange }
+             serializer_options: { brands: @brands, price_range: @price_range }
     end
 
     private
@@ -24,7 +24,7 @@ class CarController < ApplicationController
     end
 
     def fetch_info
-      @priceRange = User.find(params[:user_id]).preferred_price_range
+      @price_range = User.find(params[:user_id]).preferred_price_range
       @brands = UserPreferredBrand.where(user_id: params[:user_id]).pluck(:brand_id)
     end
 end

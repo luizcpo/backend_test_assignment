@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RecomendationSerializer < ActiveModel::Serializer
+class RecommendationSerializer < ActiveModel::Serializer
   attributes :id, :brand, :model, :price, :rank_score, :label
 
   def brand
@@ -11,7 +11,7 @@ class RecomendationSerializer < ActiveModel::Serializer
   end
 
   def rank_score
-    object.user_recomended_car&.rank_score
+    object.user_recommended_car&.rank_score
   end
 
   def label

@@ -7,10 +7,10 @@ class CarsController < ApplicationController
                                             @brands, 
                                             @price_range)
 
-      pagy,result = pagy_array(search_service.recomendations, page: params[:page])
+      pagy,result = pagy_array(search_service.recommendations, page: params[:page])
             
       render json: result, 
-             each_serializer: RecomendationSerializer,
+             each_serializer: RecommendationSerializer,
              serializer_options: { brands: @brands, price_range: @price_range }
     end
 

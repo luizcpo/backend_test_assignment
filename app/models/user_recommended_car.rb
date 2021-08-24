@@ -1,4 +1,4 @@
-class UserRecomendedCar < ApplicationRecord
+class UserRecommendedCar < ApplicationRecord
   belongs_to :user
   belongs_to :car
 

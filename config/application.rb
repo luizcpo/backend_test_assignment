@@ -29,7 +29,7 @@ module CarMarket
     config.api_only = true
 
     config.after_initialize do
-      RecomendedCarCrawlerWorker.perform_async
+      RecommendedCarCrawlerWorker.perform_async
     end
   end
 end

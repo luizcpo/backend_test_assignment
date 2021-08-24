@@ -5,6 +5,6 @@ RSpec.describe Car, type: :model do
 
   describe 'associations' do
     it { is_expected.to belong_to(:brand) }
-    it { is_expected.to have_one(:user_recomended_car) }
+    it { is_expected.to have_one(:user_recommended_car) }
   end
 end

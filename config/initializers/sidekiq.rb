@@ -15,4 +15,4 @@ Sidekiq.configure_client do |config|
 end
 
 # Configurations to run an especific worker once everyday
-Sidekiq::Cron::Job.create(name: 'recomended_car_crawler', cron: '*30 22 * * *', class: 'RecomendedCarCrawlerWorker')
+Sidekiq::Cron::Job.create(name: 'recommended_car_crawler', cron: '*30 22 * * *', class: 'RecommendedCarCrawlerWorker')

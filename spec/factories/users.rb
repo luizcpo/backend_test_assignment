@@ -14,14 +14,14 @@ FactoryBot.define do
       end
     end
 
-    trait :with_recomended_cars do
+    trait :with_recommended_cars do
       transient do
-        user_recomended_cars_count { 10 }
+        user_recommended_cars_count { 10 }
       end
 
       after(:create) do |user, evaluator|
-        create_list(:user_recomended_car, evaluator.user_recomended_cars_count, users: [user])
-        user_recomended_car.reload
+        create_list(:user_recommended_car, evaluator.user_recommended_cars_count, users: [user])
+        user_recommended_car.reload
       end
     end
   end

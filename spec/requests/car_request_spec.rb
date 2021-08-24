@@ -8,7 +8,7 @@ RSpec.describe 'Cars', type: :request do
       let(:user) { create(:user) }
 
       before do
-        query_double = double('CarSearchService', recomendations: [])
+        query_double = double('CarSearchService', recommendations: [])
         allow(CarSearchService).to receive(:new).and_return(query_double)
       end
 

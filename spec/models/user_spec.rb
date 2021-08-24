@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
 
   describe 'associations' do
     it { is_expected.to have_many(:user_preferred_brands) }
-    it { is_expected.to have_many(:user_recomended_cars) }
+    it { is_expected.to have_many(:user_recommended_cars) }
     it { is_expected.to have_many(:preferred_brands) }
   end
 

@@ -11,7 +11,7 @@ class CarSearchService < ApplicationService
       @price_min = params[:price_min]
     end
 
-    def recomendations
+    def recommendations
       results = Car.brands_and_order
 
       results = results.with_query(@query) if @query
@@ -38,9 +38,9 @@ class CarSearchService < ApplicationService
       return results
     end
   
-    def create_all_user_recomended_cars
+    def create_all_user_recommended_cars
       User.all.each do |user|
-        RecomendedCarCreatorWorker.perform_async(user.id)
+        RecommendedCarCreatorWorker.perform_async(user.id)
       end
     end
   end
